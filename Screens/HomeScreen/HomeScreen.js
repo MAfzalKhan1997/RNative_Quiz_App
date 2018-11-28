@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Camera, Permissions, FaceDetector } from 'expo';
-import { Container, Header, Content, Button } from 'native-base';
+import { Container, Header, Content, Button, Text } from 'native-base';
 
 import { StackActions, NavigationActions } from 'react-navigation'
 
@@ -14,33 +14,45 @@ export default class HomeScreen extends React.Component {
             type: Camera.Constants.Type.back,
 
             isCameraOpen: false,
-            // isFace: false,
+            loading: true
         };
         this.handleFacesDetected = this.handleFacesDetected.bind(this)
     }
 
     handleFacesDetected(param) {
         console.log(param, "DETECTING FACE...");
-        
+
         if (param.faces.length > 0) {
             const resetAction = StackActions.reset({
-                index: 0,
+                index: 1,
                 actions: [
-                    NavigationActions.navigate({ routeName: 'Quiz' }),
+                    NavigationActions.navigate({ routeName: 'Home' }),
+                    NavigationActions.navigate({ routeName: 'QuizSelect' }),
                 ],
             });
             this.props.navigation.dispatch(resetAction);
         }
 
     }
-    
+
     async componentWillMount() {
+        await Expo.Font.loadAsync({
+            'Roboto': require('native-base/Fonts/Roboto.ttf'),
+            'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf')
+        });
+        this.setState({ loading: false });
+    }
+
+    async componentDidMount() {
         const { status } = await Permissions.askAsync(Permissions.CAMERA);
         this.setState({ hasCameraPermission: status === 'granted' });
     }
 
     render() {
-        const { isCameraOpen, hasCameraPermission, isFace } = this.state;
+        const { isCameraOpen, hasCameraPermission, loading } = this.state;
+        if (loading) {
+            return <Expo.AppLoading />
+        }
 
         if (hasCameraPermission === null) {
             return <View />;
