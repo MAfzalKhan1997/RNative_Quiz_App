@@ -11,7 +11,7 @@ export default class HomeScreen extends React.Component {
 
         this.state = {
             hasCameraPermission: null,
-            type: Camera.Constants.Type.back,
+            type: Camera.Constants.Type.front,
 
             isCameraOpen: false,
             loading: true
@@ -57,7 +57,9 @@ export default class HomeScreen extends React.Component {
         if (hasCameraPermission === null) {
             return <View />;
         } else if (hasCameraPermission === false) {
-            return <Text>No access to camera</Text>;
+            return <View>
+                <Text>No access to camera</Text>;
+            </View>
         } else {
             return (
                 <View style={{ flex: 1 }}>
@@ -116,11 +118,15 @@ export default class HomeScreen extends React.Component {
     }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+const styles = StyleSheet.create({
+    container: {
+        // flex: 1,
+        // backgroundColor: '#fff',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // position: 'absolute',
+        // top: '50',
+        // bottom: '50',
+        
+    },
+});
