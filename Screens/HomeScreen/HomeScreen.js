@@ -99,7 +99,7 @@ export default class HomeScreen extends React.Component {
                                 </View>
                             </Camera>
                         ) :
-                            <Container>
+                            <Container style={styles.container}>
                                 <Content padder>
                                     <Button block success
                                         onPress={() => this.setState({ isCameraOpen: true })}
@@ -127,6 +127,6 @@ const styles = StyleSheet.create({
         // position: 'absolute',
         // top: '50',
         // bottom: '50',
-        
+
     },
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Container, Header, Content, Form, Item, Picker, Text, Icon, Button } from 'native-base';
 
 import { StackActions, NavigationActions } from 'react-navigation'
@@ -59,8 +59,9 @@ export default class QuizSelect extends React.Component {
         return (
             <Container>
                 <Content padder>
-                    <Form>
-                        <Item picker>
+                    <Form style={styles.margining}>
+
+                        <Item picker style={styles.margining}>
                             <Picker
                                 mode="dropdown"
                                 iosIcon={<Icon name="ios-arrow-down-outline" />}
@@ -78,7 +79,7 @@ export default class QuizSelect extends React.Component {
                             </Picker>
                         </Item>
 
-                        <Item picker>
+                        <Item picker style={styles.margining}>
                             <Picker
                                 mode="dropdown"
                                 iosIcon={<Icon name="ios-arrow-down-outline" />}
@@ -96,7 +97,7 @@ export default class QuizSelect extends React.Component {
                             </Picker>
                         </Item>
                     </Form>
-                    <Button block primary
+                    <Button block primary style={styles.btn}
                         onPress={() => this.startQuiz()}
                     >
                         <Text>Start Quiz</Text>
@@ -106,3 +107,14 @@ export default class QuizSelect extends React.Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    margining: {
+        marginTop: 10,
+        // marginBottom: 10,
+    },
+    btn: {
+        marginTop: 40,
+        // marginBottom: 10,
+    },
+});

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Container, Header, Content, ListItem, Text, Radio, Right, Left, Spinner, Button } from 'native-base';
 import { StackActions, NavigationActions } from 'react-navigation'
 
@@ -150,7 +150,7 @@ export default class QuizStart extends React.Component {
             return (
                 <Container>
                     <Content padder>
-                        <Text>{questNo + 1 + ') ' + questionsArr[questNo].question}</Text>
+                        <Text style={styles.margining} >{questNo + 1 + ') ' + questionsArr[questNo].question}</Text>
 
                         {
                             options.map((value, index) => {
@@ -172,7 +172,7 @@ export default class QuizStart extends React.Component {
                             })
                         }
 
-                        <Button block info
+                        <Button block info style={styles.btn}
                             onPress={() => this.nextQuest()}
                         >
                             <Text>Next</Text>
@@ -182,3 +182,14 @@ export default class QuizStart extends React.Component {
             );
     }
 }
+
+const styles = StyleSheet.create({
+    margining: {
+        marginTop: 20,
+        marginBottom: 40,
+    },
+    btn: {
+        marginTop: 20,
+        // marginBottom: 10,
+    },
+});
