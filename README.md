@@ -1,5 +1,6 @@
 ## Method 3 - Source Code
 git clone [https://github.com/MAfzalKhan1997/RNative_Quiz_App](https://github.com/MAfzalKhan1997/RNative_Quiz_App)
+<br/>
 npm install
 npm start (it will give you a QR code to scan)
 
