@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "rnative_quiz_app",
-    "description": "This project is really great.",
-    "slug": "rnative_quiz_app",
+    "name": "Quizy",
+    "description": "Native Quiz App for Android & IOS.",
+    "slug": "rnative-quiz-app",
     "privacy": "public",
     "sdkVersion": "31.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -14,7 +14,7 @@ export default class QuizResult extends React.Component {
     }
 
     render() {
-        const { totalQuest, corrected } = this.props.navigation.state.params.quizParams;
+        const { totalQuest, corrected, min, sec } = this.props.navigation.state.params.quizParams;
 
         return (
             <Container>
@@ -25,7 +25,8 @@ export default class QuizResult extends React.Component {
                                 <H3>Total Questions: {totalQuest}</H3>
                                 <H3>Correct: {corrected}</H3>
                                 <H3>Incorrect: {totalQuest - corrected}</H3>
-                                <H3>Percentage: {(corrected * 100)/totalQuest} %</H3>
+                                <H3>Percentage: {(corrected * 100) / totalQuest} %</H3>
+                                <H3>Time Taken: {`${min} min ${sec} sec`}</H3>
                             </Body>
                         </CardItem>
                     </Card>

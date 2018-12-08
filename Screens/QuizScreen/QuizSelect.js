@@ -61,7 +61,7 @@ export default class QuizSelect extends React.Component {
                 <Content padder>
                     <Form style={styles.margining}>
 
-                        <Item picker style={styles.margining}>
+                        <Item picker>
                             <Picker
                                 mode="dropdown"
                                 iosIcon={<Icon name="ios-arrow-down-outline" />}
@@ -79,7 +79,7 @@ export default class QuizSelect extends React.Component {
                             </Picker>
                         </Item>
 
-                        <Item picker style={styles.margining}>
+                        <Item picker>
                             <Picker
                                 mode="dropdown"
                                 iosIcon={<Icon name="ios-arrow-down-outline" />}
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         // marginBottom: 10,
     },
     btn: {
-        marginTop: 40,
+        marginTop: 30,
         // marginBottom: 10,
     },
 });

@@ -15,7 +15,12 @@ export default class QuizStart extends React.Component {
             itemSelected: null,
 
             corrected: 0,
+
+            sec: 0,
+            min: 0,
         };
+        this.quizTimer = this.quizTimer.bind(this);
+        this.timer();
     }
 
     async getQuiz() {
@@ -86,6 +91,7 @@ export default class QuizStart extends React.Component {
                         itemSelected: null
                     },
                         () => {
+                            clearInterval(this.time);
                             const resetAction = StackActions.reset({
                                 index: 0,
                                 actions: [
@@ -95,6 +101,8 @@ export default class QuizStart extends React.Component {
                                             quizParams: {
                                                 totalQuest: questionsArr.length,
                                                 corrected: this.state.corrected,
+                                                min: this.state.min,
+                                                sec: this.state.sec,
                                             }
                                         }
                                     }),
@@ -105,6 +113,7 @@ export default class QuizStart extends React.Component {
                     )
                 }
                 else {
+                    clearInterval(this.time);
                     const resetAction = StackActions.reset({
                         index: 0,
                         actions: [
@@ -114,6 +123,8 @@ export default class QuizStart extends React.Component {
                                     quizParams: {
                                         totalQuest: questionsArr.length,
                                         corrected: this.state.corrected,
+                                        min: this.state.min,
+                                        sec: this.state.sec,
                                     }
                                 }
                             }),
@@ -128,12 +139,33 @@ export default class QuizStart extends React.Component {
         }
     }
 
+    quizTimer() {
+        const { sec, min } = this.state;
+
+        if (sec === 59) {
+
+            this.setState({
+                sec: 0,
+                min: min + 1,
+            })
+        }
+        else {
+            this.setState({
+                sec: sec + 1,
+            })
+        }
+    }
+
+    timer() {
+        this.time = setInterval(this.quizTimer, 1000);
+    }
+
     render() {
         // console.log('questions', this.state.questionsArr)
         // console.log(this.state.options)
         console.log(this.state.corrected)
 
-        const { questNo, questionsArr, options, itemSelected } = this.state;
+        const { questNo, questionsArr, options, itemSelected, min, sec } = this.state;
 
         if (!questionsArr) {
             return <Container>
@@ -150,6 +182,7 @@ export default class QuizStart extends React.Component {
             return (
                 <Container>
                     <Content padder>
+                        <Text style={{ flex: 1, justifyContent: "center", textAlign: "center" }}>{`${min}:${sec}`}</Text>
                         <Text style={styles.margining} >{questNo + 1 + ') ' + questionsArr[questNo].question}</Text>
 
                         {
@@ -186,7 +219,9 @@ export default class QuizStart extends React.Component {
 const styles = StyleSheet.create({
     margining: {
         marginTop: 20,
-        marginBottom: 40,
+        marginBottom: 20,
+        marginRight: 10,
+        marginLeft: 10,
     },
     btn: {
         marginTop: 20,
