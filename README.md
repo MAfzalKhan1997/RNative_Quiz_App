@@ -25,4 +25,4 @@ open EXPO App
 <br/>
 Touch "Scan QR Code".
 <br/>
-Scan the QR Code displayed in the terminal
+Scan the QR Code displayed in the terminal.
