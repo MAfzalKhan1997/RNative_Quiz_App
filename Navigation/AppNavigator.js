@@ -9,14 +9,15 @@ const StackNavigator = createStackNavigator({
     Home: {
         screen: HomeScreen,
         navigationOptions: () => ({
-            title: 'Home',
-            headerStyle: {
-                backgroundColor: '#3f51b5',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-                fontWeight: 'bold',
-            },
+            header: null,
+            // title: 'Home',
+            // headerStyle: {
+            //     backgroundColor: '#3f51b5',
+            // },
+            // headerTintColor: '#fff',
+            // headerTitleStyle: {
+            //     fontWeight: 'bold',
+            // },
         })
     },
     QuizSelect: {

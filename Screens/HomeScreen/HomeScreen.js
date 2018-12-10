@@ -62,7 +62,7 @@ export default class HomeScreen extends React.Component {
             </View>
         } else {
             return (
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 1, justifyContent: 'center', }}>
 
                     {
                         isCameraOpen ? (
@@ -99,9 +99,9 @@ export default class HomeScreen extends React.Component {
                                 </View>
                             </Camera>
                         ) :
-                            <Container style={styles.container}>
+                            <Container style={{ top: '45%', bottom: '55%' }} >
                                 <Content padder>
-                                    <Button block success
+                                    <Button success block
                                         onPress={() => this.setState({ isCameraOpen: true })}
                                     >
                                         <Text>Detect my Face</Text>
@@ -120,10 +120,10 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
+        flex: 1,
         // backgroundColor: '#fff',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
         // position: 'absolute',
         // top: '50',
         // bottom: '50',

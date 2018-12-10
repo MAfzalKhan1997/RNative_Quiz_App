@@ -13,12 +13,9 @@
     "orientation": "portrait",
     "icon": "./assets/quizicon.png",
     "splash": {
-      "image": "./assets/splash1.png",
-      "resizeMode": "contain",
+      "image": "./assets/splash2.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "bundleIdentifier": "com.codeCrums.Quizy"
     },
     "android": {
       "package": "com.codeCrums.Quizy"
@@ -30,7 +27,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.codeCrums.Quizy"
     }
   }
 }

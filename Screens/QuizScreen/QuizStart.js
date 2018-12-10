@@ -20,7 +20,7 @@ export default class QuizStart extends React.Component {
             min: 0,
         };
         this.quizTimer = this.quizTimer.bind(this);
-        this.timer();
+        // this.timer();
     }
 
     async getQuiz() {
@@ -42,6 +42,7 @@ export default class QuizStart extends React.Component {
                             options = [...options, ...this.state.questionsArr[0].incorrect_answers]
                             // console.log(options)
                             this.setState({ options })
+                            this.timer();
                         }
                     }
                 )
@@ -168,7 +169,7 @@ export default class QuizStart extends React.Component {
         const { questNo, questionsArr, options, itemSelected, min, sec } = this.state;
 
         if (!questionsArr) {
-            return <Container>
+            return <Container style={{ top: '40%', bottom: '60%' }}>
                 <Content>
                     <Spinner color='blue' />
                 </Content>
