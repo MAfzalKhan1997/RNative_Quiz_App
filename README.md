@@ -1,5 +1,5 @@
 ## Method 1 - Just Download the APK file and Install it
-Click [Here](https://expo.io/artifacts/4b61c44a-03b2-49a7-96a0-9f15fa3fe3fb) to Download APK File for android
+Click [Here](https://expo.io/builds/af74b683-6ca4-4a20-bd0f-ce63f2d751b5) to Download APK File for android
 
 ## Method 2 - Four Simple Steps to Run this Quiz App
 Open the link in your PC - [https://exp.host/@mafzalkhan/rnative-quiz-app](https://exp.host/@mafzalkhan/rnative-quiz-app)
