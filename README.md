@@ -21,7 +21,7 @@ To test this app in development mode
 <br/>
 grab your smartphone and install EXPO application from App Store (iOS) or Play Store (Android)
 <br/><br/>
-open EXPO App
+open EXPO App.
 <br/>
 Touch "Scan QR Code".
 <br/>
